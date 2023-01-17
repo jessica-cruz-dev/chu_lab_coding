@@ -30,13 +30,9 @@ Problem 2
 **A script that 1) updates a JSON input file by appending a new set of randomly
 generated identifiers, 2) prints only the new identifiers to the output.**
 
-NOTE: I used argparse to make the command line arguments more identifiable. If you
-want to run the script without having to specify the argparse options, you can switch
-to the ***without_argparse*** branch and run this script there.
-
 Example call:
 ```
-python generate_ids.py --identifier-set-file identifier_set.json --new-identifiers-quantity 5
+python generate_ids.py identifier_set.json 5
 ```
 
 
@@ -46,11 +42,7 @@ Problem 3
 'positive' (virus detected) result dated within the past 30 days, and reports
 out their age, most recent test result, and most recent test date.**
 
-NOTE: I used argparse to make the command line arguments more identifiable. If you
-want to run the script without having to specify the argparse options, you can switch
-to the ***without_argparse*** branch and run this script there.
-
 Example call:
 ```
-python positive_adults.py --participant-file participants.json --results-file results.json
+python positive_adults.py participants.json results.json
 ```
