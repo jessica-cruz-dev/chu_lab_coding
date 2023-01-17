@@ -5,9 +5,7 @@ out their age, most recent test result, and most recent test date.
 
 Example call:
 
-python positive_adults.py \
-    --participant-file participants.json \
-    --results-file results.json
+python positive_adults.py participants.json results.json
 
 """
 import argparse
@@ -138,26 +136,8 @@ def main(participant_file: str, results_file: str) -> None:
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description=__doc__)
+    # Read in command line arguments
+    participant_file = str(sys.argv[1])
+    results_file = str(sys.argv[2])
 
-    parser.add_argument(
-        "--participant-file",
-        type=str,
-        required=True,
-        help=(
-            "The path of a JSON file from which to load the participants "
-            "information."
-        )
-    )
-    parser.add_argument(
-        "--results-file",
-        type=str,
-        required=True,
-        help=(
-            "The path of a JSON file from which to load the test results."
-        )
-    )
-
-    args = parser.parse_args()
-
-    main(args.participant_file, args.results_file)
+    main(participant_file, results_file)

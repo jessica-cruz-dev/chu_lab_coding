@@ -4,9 +4,7 @@ the output.
 
 Example call:
 
-python generate_ids.py \
-    --identifier-set-file identifier_set.json \
-    --new-identifiers-quantity 5
+python generate_ids.py identifier_set.json 5
 
 """
 import argparse
@@ -127,24 +125,8 @@ def main(identifier_set_file: str, new_identifiers_quantity: int) -> None:
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description=__doc__)
+    # Read in command line arguments
+    identifier_set_file = str(sys.argv[1])
+    new_identifiers_quantity = int(sys.argv[2])
 
-    parser.add_argument(
-        "--identifier-set-file",
-        type=str,
-        required=True,
-        help=(
-            "The path of a JSON file from which to load the existing "
-            "identifier set."
-        )
-    )
-    parser.add_argument(
-        "--new-identifiers-quantity",
-        type=int,
-        required=True,
-        help=("A positive integer quantity of new identifiers to generate.")
-    )
-
-    args = parser.parse_args()
-
-    main(args.identifier_set_file, args.new_identifiers_quantity)
+    main(identifier_set_file, new_identifiers_quantity)
