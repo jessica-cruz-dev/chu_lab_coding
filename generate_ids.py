@@ -12,8 +12,8 @@ python generate_ids.py \
 import argparse
 import pandas as pd
 import random
-import sys
 import re
+import sys
 
 
 def read_json_file(identifier_set_file: str) -> pd.DataFrame:
