@@ -110,9 +110,8 @@ def main(identifier_set_file: str, new_identifiers_quantity: int) -> None:
             The path of a JSON file from which to load the existing identifier
             set
         new_identifiers_quantity (int):
-            A positive integer quantity of new identifiers to to generate
+            A positive integer quantity of new identifiers to generate
     '''
-
     # Read in new identifiers list
     identifier_set = read_json_file(identifier_set_file)
 
